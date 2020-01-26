@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} КОРЗИНА {% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <h5 style="color: rgba(255,255,255,.5); margin-bottom: 25px; margin-top: 15px; float:left;" class="jumbotron-heading">
+        <a class="btn-custom" href="{% url 'store:index' %}">МЕНЮ</a>
+    </h5>
+    <h1 style="color: whitesmoke; margin-bottom: 25px; float: right; text-align: right;" class="jumbotron-heading">КОРЗИНА</h1>
+</div>
+
+<div id="card" class="col-md-12 col-lg-8">
+
+
+</div>
+
+<div class="col-md-12 col-lg-4">
+    <h5 style="color: white; text-align: right">СУММА К ОПЛАТЕ: <span id="all_sum">255</span>&#8381;</h5>
+    <h4 style="color: rgba(255,255,255,.5); margin-bottom: 25px; margin-top: 15px; text-align: right;" class="jumbotron-heading">
+        <a href="{% url 'store:purchase' %}" class="btn-custom">ОФОРМИТЬ ЗАКАЗ</a>
+    </h4>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ category_name }} {% endblock title %}
+
+{% block content %}
+    <div class="container">
+    <h5 style="color: rgba(255,255,255,.5); margin-bottom: 25px; margin-top: 15px; float:left;" class="col-md-1 col-sm-1 col-3 jumbotron-heading">
+        <a class="btn-custom" href="{% if parent %} {%  url 'store:category'  parent.id %} {% else %} {% url 'store:index' %} {% endif %}">
+            {% if parent %} {{ parent.name|upper }} {% else %} МЕНЮ {% endif %}
+        </a>
+    </h5>
+        <h1 style="color: whitesmoke; margin-bottom: 25px; float: right; text-align: right;" class="col-md-11 col-sm-11 col-9 jumbotron-heading">{{ category_name }}</h1>
+    </div>
+
+    {% if sub_category %}
+
+        {% for category in sub_category %}
+
+            <div class="col-md-4">
+                <a href="{%  url 'store:category'  category.id %}" class="card mb-4 shadow-sm">
+                    <img src="{{ MEDIA_URL }}{{ category.photo }}" class="card-img-top img16x9" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title category-title">{{ category.name }}</h5>
+                    </div>
+                </a>
+            </div>
+
+        {% endfor %}
+
+    {% endif %}
+
+    {% if foods %}
+
+        {% for food in foods %}
+
+            <div class="col-md-4">
+                <a href="{%  url 'store:food'  food.id %}" class="card mb-4 shadow-sm">
+                    <img src="{{ MEDIA_URL }}{{ food.photo }}" class="card-img-top img16x9" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="height: 50px;">{{ food.name }}</h5>
+                        <p class="card-text">Цена: {{ food.price }}&#8381;</p>
+                        <p class="card-text"><small class="text-muted">Вес: {{ food.weight }} грамм</small></p>
+                    </div>
+                </a>
+            </div>
+
+        {% endfor %}
+
+    {% endif %}
+    {# Display a form #}
+{% endblock content %}

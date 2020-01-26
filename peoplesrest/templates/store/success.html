@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} ОФОРМЛЕНИЕ ЗАКАЗА {% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <h5 style="color: rgba(255,255,255,.5); margin-bottom: 25px; margin-top: 15px; float:left;" class="jumbotron-heading">
+        <a class="btn-custom" href="{% url 'store:index' %}">МЕНЮ</a>
+    </h5>
+    <h1 style="color: lightgreen; margin-bottom: 25px; float: right; text-align: right;" class="jumbotron-heading">ЗАКАЗ ПОДТВЕРЖДЕН</h1>
+</div>
+
+<div id="card" class="col-md-8 offset-md-2">
+
+
+<h3 style="text-align: center; color: white; margin-top: 180px;">Ваш заказ создан и данные по нему отправлены менеджеру. В ближайшее время с Вами свяжутся по номеру телефона, который вы указали при оформление.</h3>
+<a class="btn-custom" href="{% url 'store:index' %}"><h3 style="text-align: center;">ПЕРЕЙТИ В МЕНЮ</h3></a>
+
+
+
+
+</div>
+
+
+
+{% endblock content %}

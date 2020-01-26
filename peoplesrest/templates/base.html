@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {# Load the tag library #}
+    {% load bootstrap4 %}
+
+    {# Load CSS and JavaScript #}
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+
+
+    {% bootstrap_messages %}
+
+    <link rel="stylesheet" href="{% static 'css/store.css' %}">
+    <meta charset="UTF-8">
+    <title>{% block title %} Peoplesrest {% endblock title %}</title>
+</head>
+<body>
+<div class="container">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="/">PEOPLE'S REST</a>
+    <div class="flex-grow-0 ml-auto mr-1">
+    <ul class="navbar-nav text-right">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'store:cart' %}">КОРЗИНА <span id="cart_count" style="font-size:16px; display: none;" class="badge badge-secondary">10</span></a>
+      </li>
+    </ul>
+    </div>
+
+
+</nav>
+</div>
+    <div class="album">
+        <div class="container">
+            <div class="row">
+                {% block content %} {% endblock content %}
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.maskedinput.js' %}"></script>
+</body>
+</html>

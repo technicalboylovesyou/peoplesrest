@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %} ОФОРМЛЕНИЕ ЗАКАЗА {% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <h5 style="color: rgba(255,255,255,.5); margin-bottom: 25px; margin-top: 15px; float:left;" class="jumbotron-heading">
+        <a class="btn-custom" href="{% url 'store:cart' %}">КОРЗИНА</a>
+    </h5>
+    <h1 style="color: whitesmoke; margin-bottom: 25px; float: right; text-align: right;" class="jumbotron-heading">ОФОРМЛЕНИЕ ЗАКАЗА</h1>
+</div>
+
+<div id="card" class="col-md-12 col-lg-8">
+
+<div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label purchase-label">Имя</label>
+    <div class="col-sm-10">
+      <input type="text" placeholder="Обязательное поле" class="form-control purchase-input" id="name">
+    </div>
+</div>
+
+<div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label purchase-label">Адрес</label>
+    <div class="col-sm-10">
+      <input type="text" placeholder="Обязательное поле" class="form-control purchase-input" id="address">
+    </div>
+</div>
+
+<div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label purchase-label">Телефон</label>
+    <div class="col-sm-10">
+      <input type="phone" placeholder="Обязательное поле" class="form-control purchase-input" id="phone">
+    </div>
+</div>
+
+</div>
+
+<div class="col-md-12 col-lg-4">
+    <h5 style="color: white; text-align: right">СУММА К ОПЛАТЕ: <span id="all_sum">255</span>&#8381;</h5>
+    <h4 style="color: rgba(255,255,255,.5); margin-bottom: 25px; margin-top: 15px; text-align: right;" class="jumbotron-heading">
+        <a onclick="purchase()" href="#z" class="btn-custom">Подтвердить заказ</a>
+    </h4>
+</div>
+
+
+{% endblock content %}
