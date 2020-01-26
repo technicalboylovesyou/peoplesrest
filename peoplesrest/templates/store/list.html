@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} МЕНЮ {% endblock title %}
+
+{% block content %}
+
+    <div class="container">
+        <h1 style="color: whitesmoke; margin-bottom: 25px; float: right" class="jumbotron-heading">МЕНЮ</h1>
+    </div>
+    {% if category_list %}
+
+        {% for category in category_list %}
+            <div class="col-md-4">
+                <a href="{%  url 'store:category'  category.id %}" class="card mb-4 shadow-sm">
+                    <img src="{{ MEDIA_URL }}{{ category.photo }}" class="card-img-top img16x9" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title category-title">{{ category.name }}</h5>
+                    </div>
+                </a>
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+        Категории не найдены
+    {% endif %}
+    {# Display a form #}
+{% endblock content %}

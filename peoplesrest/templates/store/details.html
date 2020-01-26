@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ food_info.name|upper }} {% endblock title %}
+
+{% block content %}
+    <div class="container">
+    <h5 style="color: rgba(255,255,255,.5); margin-bottom: 25px; margin-top: 15px; float:left;" class="col-md-1 col-sm-1 col-3 jumbotron-heading">
+        <a class="btn-custom" href="{%  url 'store:category' food_info.category.id  %}">{{ food_info.category.name|upper }}</a>
+    </h5>
+        <h1 id = "food_name" style="color: whitesmoke; margin-bottom: 25px; float: right; text-align: right; word-wrap: break-word; -webkit-hyphens: auto; -ms-hyphens: auto; hyphens: auto; " class="col-md-11 col-sm-11 col-9 jumbotron-heading">{{ food_info.name|upper }}</h1>
+    </div>
+    <div class="row" style="padding-left: 15px; padding-right: 15px;">
+        <div class="col-md-6">
+            <img src="{{ MEDIA_URL }}{{ food_info.photo }}" class="card-img-top img16x9_details" alt="...">
+        </div>
+        <div class="col-md-6" style="color: whitesmoke; text-align: right;">
+            <p class="card-text">{{ food_info.description }}</p></br></br>
+            <h5 class="card-text">Цена: {{food_info.price}}&#8381;</h5>
+            <h4 style=" margin-bottom: 25px; margin-top: 15px; float:right;" class="jumbotron-heading">
+                <div id="btn-cart" onclick="add('{{ food_info.name }}',{{ food_info.price }}, {{ food_info.id }}, '{{ MEDIA_URL }}{{ food_info.photo }}')" class="btn-custom" style="font-weight: bold;">В КОРЗИНУ</div>
+            </h4>
+        </div>
+    </div>
+
+{% endblock content %}

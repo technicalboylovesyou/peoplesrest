@@ -1,0 +1,190 @@
+html, body {
+    height: 100%;
+    background-color: #303032;
+}
+
+.album {
+    margin-top: 5px;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+}
+
+a {
+    color : white;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.card-body {
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 108px;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.navbar{
+    font-weight: bold;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.navbar-dark{
+    background-color: #303032!important;
+}
+
+.card-img-top {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+    .img16x9 {
+        height: 15rem;
+    }
+
+    .img16x9_details {
+        height: 24rem;
+    }
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .img16x9 {
+        height: 12rem;
+    }
+
+    .img16x9_details {
+        height: 21rem;
+    }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+    .img16x9 {
+        height: 9rem;
+    }
+
+    .img16x9_details {
+        height: 18rem;
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .img16x9 {
+        height: 21rem;
+    }
+
+    .img16x9_details {
+        height: 21rem;
+    }
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+    .img16x9 {
+        height: 18rem;
+    }
+
+    .img16x9_details {
+        height: 18rem;
+    }
+}
+
+.card-text {
+    margin-bottom: 0px;
+}
+
+.card-title {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+.navbar-nav {
+    margin: 0 0 0 auto;
+}
+
+.btn-back {
+    border-radius: 0;
+    background-color: #303032;
+    font-size: 1.8rem;
+
+}
+
+.category-title {
+    height: 98px;
+}
+
+.btn-custom {
+    color: rgba(255,255,255,0.5)!important;
+    cursor: pointer;
+}
+
+.btn-custom:hover {
+    color: white!important;
+}
+
+.nav-link:hover {
+    color: white!important;
+}
+
+.custom-select {
+    background-color: #303032;
+    color: white;
+    background: transparent;
+    width: 60px;
+    border-radius: 0px;
+    padding-left: 23px;
+    padding-right: 0px;
+
+}
+
+.img16x9_cart{
+    height: 6rem;
+    margin-right: 20px;
+}
+
+.purchase-label {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.purchase-input {
+    color: white;
+    background-color: transparent;
+    background: transparent;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 0px;
+}
+
+.purchase-input:focus {
+    background-color: transparent;
+    color: white;
+}
+
+.error-input {
+    border-color: red;
+}
+
+.error-input::-webkit-input-placeholder {
+    color: red;
+}
+
+
+
